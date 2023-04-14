@@ -3,6 +3,7 @@ import './App.css'
 import { type IUser } from './types'
 import { UsersTable } from './components/UsersTable'
 import { ESortBy, ESortOrder } from './components/types'
+import { StrategyManager } from './components/strategy.manager'
 
 function App () {
   const [userList, setUserList] = useState<IUser[]>([])
@@ -77,27 +78,8 @@ function App () {
   }, [userList, countryFilter])
 
   const sortedUserList = useMemo(() => {
-    if (sortBy === ESortBy.COUNTRY) {
-      return [...filteredUserList].sort((a, b) => {
-        return sortOrder === ESortOrder.ASC
-          ? a.location.country.localeCompare(b.location.country)
-          : b.location.country.localeCompare(a.location.country)
-      })
-    } else if (sortBy === ESortBy.FIRST_NAME) {
-      return [...filteredUserList].sort((a, b) => {
-        return sortOrder === ESortOrder.ASC
-          ? a.name.first.localeCompare(b.name.first)
-          : b.name.first.localeCompare(a.name.first)
-      })
-    } else if (sortBy === ESortBy.LAST_NAME) {
-      return [...filteredUserList].sort((a, b) => {
-        return sortOrder === ESortOrder.ASC
-          ? a.name.last.localeCompare(b.name.last)
-          : b.name.last.localeCompare(a.name.last)
-      })
-    }
-
-    return filteredUserList
+    const strategyManager = new StrategyManager(filteredUserList, sortBy, sortOrder)
+    return strategyManager.sortUsers()
   }, [filteredUserList, sortBy, sortOrder])
 
   return (
