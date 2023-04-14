@@ -1,0 +1,73 @@
+#root {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#root .App .buttons-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2.5em;
+}
+
+#root .App .table-striped tbody tr:nth-child(2n) {
+  background-color: #333;
+}
+
+#root .App .table-striped tbody tr:nth-child(2n + 1) {
+  background-color: #555;
+}
+
+#root .App .buttons-container .btn,
+#root .App .buttons-container .input {
+  margin: 0 0.5em;
+}
+
+#root .App .buttons-container .input {
+  font-size: 1.25em;
+  padding: 0.25em 1em;
+  width: 200px;
+  border-radius: 5px;
+}
+
+#root .App .cursor-pointer {
+  cursor: pointer;
+}
+
+#root .App .pagination-container {
+  margin-top: 1em;
+}
+
+#root .App .pagination-container .pagination-item {
+  display: inline;
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+}
+
+#root .App .pagination-container .pagination-item.btn-disabled{
+  cursor: default;
+  color: gray;
+  background-color: #555;
+}
+
+#root .App .pagination-container div.pagination-item,
+#root .App .pagination-container button.pagination-item {
+  font-size: 20px;
+}
+
+@media (prefers-color-scheme: light) {
+  #root .App .table-striped tbody tr:nth-child(2n) {
+    background-color: #dfdfdf;
+  }
+  
+  #root .App .table-striped tbody tr:nth-child(2n + 1) {
+    background-color: #eee;
+  }
+
+  #root .App .pagination-container .pagination-item.btn-disabled{
+    cursor: default;
+    color: #999;
+    background-color: #ddd;
+  }
+}
