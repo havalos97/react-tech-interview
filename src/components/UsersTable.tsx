@@ -44,7 +44,6 @@ export function UsersTable (props: IProps) {
   }
 
   const paginatedUserList = (): IUser[] => {
-    console.log('Paginating...')
     return userList.slice((page - 1) * pageSize, (page * pageSize))
   }
 

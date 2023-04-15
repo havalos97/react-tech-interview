@@ -78,7 +78,7 @@ function App () {
   }, [userList, countryFilter])
 
   const sortedUserList = useMemo(() => {
-    const strategyManager = new StrategyManager(filteredUserList, sortBy, sortOrder)
+    const strategyManager = new StrategyManager([...filteredUserList], sortBy, sortOrder)
     return strategyManager.sortUsers()
   }, [filteredUserList, sortBy, sortOrder])
 
