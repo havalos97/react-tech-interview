@@ -1,10 +1,10 @@
-import { ESortBy, type ESortOrder } from './types'
 import { type IUser } from '../types'
 import { CountryStrategy } from '../user-sorting-strategies/country.strategy'
 import { FirstNameStrategy } from '../user-sorting-strategies/firstname.strategy'
 import { LastNameStrategy } from '../user-sorting-strategies/lastname.strategy'
 import { NoneStrategy } from '../user-sorting-strategies/none.strategy'
 import { type UserSortingStrategy } from '../user-sorting-strategies/usersorting.strategy'
+import { ESortBy, type ESortOrder } from './types'
 
 export class StrategyManager {
   private readonly _strategy: UserSortingStrategy

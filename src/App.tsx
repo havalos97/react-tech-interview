@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import './App.css'
-import { type IUser } from './types'
 import { UsersTable } from './components/UsersTable'
-import { ESortBy, ESortOrder } from './components/types'
 import { StrategyManager } from './components/strategy.manager'
+import { ESortBy, ESortOrder } from './components/types'
+import { type IUser } from './types'
 
 function App () {
   const [userList, setUserList] = useState<IUser[]>([])

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { type IUser } from '../types'
-import { EPageDirection, ESortBy, type ESortOrder } from './types'
 import { ArrowIcon } from './ArrowIcon'
+import { EPageDirection, ESortBy, type ESortOrder } from './types'
 
 interface IProps {
   userList: IUser[]
